@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            * 전체 선택자
+            * 선택자는 문서 내 모든 요소에 스타일을 적용
+
+            타입 선택자
+            그룹 선택자
+
+            선택자의 우선순위
+            1. !important (강제 적용)
+            2. 인라인 스타일 (HTML 요소에 직접 적용)
+            3. id 선택자 (#id)
+            4. class 선택자 (.class)
+            5. 타입 선택자 (요소 이름, 예: p, div)
+            6. 전체 선택자 (*)
+            7. 그룹 선택자 (여러 선택자를 쉼표로 구분하여 적용)
+            8. 상위 선택자 (부모 요소에 적용)
+            9. 하위 선택자 (자식 요소에 적용)
+            10. 속성 선택자 (특정 속성을 가진 요소에 적용)
+        */
+        * {
+            font-style: italic;
+        }
+        p {
+            color: blue !important;
+            font-size: 20px;
+            background-color: transparent;
+            /* 
+                background-color: transparent
+                - 투명한 배경색을 설정
+                - 요소의 배경색을 투명하게 만들어, 배경이 보이도록 함
+                - 이 스타일은 요소의 배경색을 제거하고, 부모 요소의 배경색이 그대로 보이도록 함
+            */
+        }
+
+        #p {
+            color: red; 
+            font-size: 40px;
+        }
+        .p {
+            color: green;
+            font-size: 30px;
+        }
+    
+        /* 조합을 통한 클래스선택자 명명시 일반 클래스 선택자 보다 우선 적용 */
+        div > h1 > .naver {
+            color: brown;
+        }
+
+        .naver {
+            color: green;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body bgcolor="5f5f5f">
+    <!-- 인라인 스타일 -->
+    <h1 style="color: red; font-size: 40px;">제목</h1>
+    <div>내용1</div>
+    <p>내용2-1</p>
+    <!-- 
+        class 선택자 & id 선택자
+        class 선택자는 .p로, id 선택자는 #p로 사용
+        id 선택자는 문서 내에서 유일해야 하며, class 선택자는 여러 요소에 적용 가능
+        id 선택자는 우선순위가 높아, 같은 요소에 class와 id가 모두 적용되면 id 스타일이 우선 적용됨
+     -->
+    <p id="p">내용2-2</p>
+    <p class="p">내용2-3</p>
+    <p id="p" class="p">내용2-4</p>
+    <p>
+        <span>내용2-5</span>
+    </p>
+    <span>내용3</span>
+    <div>
+        <h1>
+            <a class="naver" href="">네이버</a>
+        </h1>
+    </div>
+</body>
+</html>

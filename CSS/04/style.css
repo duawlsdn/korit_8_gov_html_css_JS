@@ -1,0 +1,92 @@
+html{
+    font-size: 62.5%;
+}
+
+.login-container {
+    box-sizing: border-box;
+    border-radius: 0.8rem;
+    padding: 2.1rem 2rem 1.8rem;
+    width: 42rem;
+    box-shadow: 0 0 0 0.1rem #e3e5e8;
+}
+
+.login-container > header > p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    font-size: 1.47rem;
+    color: #101010;
+}
+
+.login-container > main > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    margin-top : 1.3rem;
+    border: 0.1rem solid #00000006;
+    border: 0.1rem 0.2rem 0.3rem;
+    /* border-radius 시계 방향으로 적용 가능 */
+    border-radius: 0.4rem;
+    padding: 1.7rem 0;
+    width: 100%;
+    background-color: #03c75a;
+    color: #ffff;
+    text-decoration: none;
+    font-size: 1.47rem;
+    /*
+        &란 CSS에서 자식 선택자를 의미합니다.
+        여기서는 .login-container의 직계 자식 요소에만 적용됩니다.
+    */
+    & > * {
+        margin: 0.5rem;
+        font-size: 1.47rem;
+        font-weight: 900;
+    }
+    &:hover {
+        background-color: #02b14d;
+    }
+}
+
+.login-container > footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.6rem;
+
+    & > a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #606060;
+        font-size: 1.365rem;
+        text-decoration: none;
+        /*
+            &:hover는 a 태그에 마우스를 올렸을 때 적용되는 스타일입니다.
+            여기서는 텍스트에 밑줄을 추가합니다.
+        */
+        &:hover {
+            text-decoration: underline;
+        }
+        /* 
+        &:not(&:nth-of-type(1))는 첫 번째 a 태그를 제외한 모든 a 태그에 적용됩니다.
+        여기서는 a 태그 사이에 구분선을 추가합니다.
+        */
+        &:not(&:nth-of-type(1))&::before {
+            content: "";
+            display: flex;
+            margin: 0.4rem 1.2rem;
+            width: 0.1rem;
+            height: 1.2rem;
+            background-color: #d5d6d7;
+        }
+    }
+}
+
+/* 
+    서로 다른 요소의 간격을 주기 위해서는
+    margin을 활용,
+    요소의 크기를 조정하기 위해서는
+    padding을 활용합니다.
+*/
