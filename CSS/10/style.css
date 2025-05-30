@@ -75,6 +75,128 @@ html, body {
     }
 }
 
+.auth-items {
+    box-sizing: border-box;
+    padding-top: 2.4rem;
+}
+
+.auth-input-text {
+    margin: 0 auto 0.6rem;
+    width: 27rem;
+    height: 3.8rem;
+}
+
+.auth-input-border {
+    position: relative;
+    transition: all 0.1s ease-in-out;
+    box-sizing: border-box;
+    border: 0.1rem solid #555555;
+    border-radius: 0.3rem;
+    padding: 0.9rem 0.8rem 0.7rem;
+    width: 100%;
+    height: 100%;
+    background-color: #121212;
+
+    & > input {
+        position: relative;
+        z-index: 1;
+        color: #fff;
+        box-sizing: border-box;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        padding : 0;
+        width: 100%;
+        height: 100%;
+        font-size: 1.2rem;
+    }
+
+    & > label {
+        position: absolute;
+        transition: all 0.1s ease-in-out;
+        display: block;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1.2rem;
+        font-weight: 350;
+        color : #a9b0b3;
+    }
+}
+
+.is-not-empty {
+    padding: 1.4rem 0.8rem 0.2rem;
+
+    & > label {
+        top: 25%;
+        font-size: 1rem;
+    }
+}
+
+.auth-submit-button {
+    margin: 0.8rem auto;
+    width: 27rem;
+    height: 3.2rem;
+
+    & > button {
+        box-sizing: border-box;
+        border: none;
+        border-radius: 0.8rem;
+        width: 100%;
+        height: 100%;
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: #bebcbc;
+        background-color: #0f659e;
+    }
+}
+
+.or-else {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1.4rem 4rem 2.2rem;
+
+    & > div:not(div:nth-of-type(2)) {
+        flex-grow: 1;
+        height: 0.1rem;
+        background-color: #262626;
+    }
+
+    & > div:nth-of-type(2) {
+        margin: 0 1.8rem;
+        font-weight: 600;
+        font-size: 1.3rem;
+        color : #6b6e70;
+    }
+}
+
+.oauth2-buttons {
+    margin: 0.8rem 4rem;
+    width: 27rem;
+    height: 2rem;
+
+    
+    & > button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        cursor: pointer;
+        & > svg {
+            margin: 0 0.8rem 0 0.4rem;
+            color: #0095f6;
+        }
+        & > span {
+            color : #3579ea;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+    }
+}
+
 .forgot-password {
     display: flex;
     justify-content: center;
