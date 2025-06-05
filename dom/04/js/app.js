@@ -1,0 +1,17 @@
+let studentList = [];
+
+function app() {
+    const appInfo = {
+        title : "component Study",
+        date : new Date().toLocaleDateString(),
+        author: "Ethan",
+    }
+    return `
+    <div>
+        <h1>제목: ${appInfo.title}</h1>
+        <h2>작성일: ${appInfo.date}</h2>
+        <h2>작성자: ${appInfo.author}</h2>
+        ${studentRegister()}
+    </div>
+    `;
+}
